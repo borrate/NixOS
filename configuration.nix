@@ -77,6 +77,7 @@
   #     tree
   #   ];
   };
+  users.defaultUserShell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -100,6 +101,7 @@
     networkmanagerapplet
     obsidian
     ripgrep
+    starship
     tig
     tldr
     tmux
@@ -111,6 +113,11 @@
   ];
 
   programs.light.enable = true;
+  programs.zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
