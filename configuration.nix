@@ -105,7 +105,6 @@
     starship
     tig
     tldr
-    tmux
     ungoogled-chromium
     unzip
     wget
@@ -118,6 +117,16 @@
       enable = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+  };
+
+  programs.tmux = {
+      enable = true;
+      plugins = with pkgs; [
+          tmuxPlugins.continuum
+          tmuxPlugins.resurrect
+          tmuxPlugins.dracula
+          tmuxPlugins.sessionist
+      ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
