@@ -100,6 +100,7 @@
     networkmanagerapplet
     obsidian
     ripgrep
+    tig
     tldr
     tmux
     ungoogled-chromium
