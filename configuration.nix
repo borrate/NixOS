@@ -85,6 +85,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     acpi
+    bat
     discord
     dunst
     docker
