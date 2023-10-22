@@ -108,6 +108,7 @@
     starship
     tig
     tldr
+    traceroute
     ungoogled-chromium
     unzip
     wget
