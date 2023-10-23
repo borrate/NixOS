@@ -106,6 +106,7 @@
     neofetch
     neovim
     networkmanagerapplet
+    nodejs
     obsidian
     ripgrep
     starship
