@@ -61,7 +61,10 @@
   services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+      enable = true;
+      touchpad.tapping = false;
+  };
 
   services.syncthing = {
     enable = true;
