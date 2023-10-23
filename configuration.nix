@@ -22,10 +22,6 @@
   # Set your time zone.
   time.timeZone = "America/Santiago";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
 #  console = {
@@ -34,55 +30,22 @@
 #    useXkbConfig = true; # use xkbOptions in tty.
 #  };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  
-  # Configure keymap in X11
-  services.xserver.layout = "latam";
-  services.xserver.xkbOptions = "caps:escape";
-
-  # i3
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.windowManager.i3.extraPackages = with pkgs; [
-	dmenu
-	i3lock
-	i3blocks
-  ];
-  services.picom.enable = true;
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  # Enable bluetoot
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput = {
-      enable = true;
-      touchpad.tapping = false;
-  };
-
-  services.syncthing = {
-    enable = true;
-    user = "rh";
-    configDir = "/home/rh/.config/syncthing";
-    dataDir = "/home/rh/Sync";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rh = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
     initialPassword = "rh";
-  #   packages = with pkgs; [
-  #     firefox
-  #     tree
-  #   ];
   };
+
   users.defaultUserShell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
@@ -152,6 +115,34 @@
   # };
 
   # List services that you want to enable:
+  services.syncthing = {
+    enable = true;
+    user = "rh";
+    configDir = "/home/rh/.config/syncthing";
+    dataDir = "/home/rh/Sync";
+  };
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  
+  # Configure keymap in X11
+  services.xserver.layout = "latam";
+  services.xserver.xkbOptions = "caps:escape";
+
+  # i3
+  services.xserver.windowManager.i3.enable = true;
+  services.xserver.windowManager.i3.extraPackages = with pkgs; [
+	dmenu
+	i3lock
+	i3blocks
+  ];
+  services.picom.enable = true;
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput = {
+      enable = true;
+      touchpad.tapping = false;
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
