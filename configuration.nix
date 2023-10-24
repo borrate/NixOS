@@ -35,7 +35,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # Enable bluetoot
+  # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
@@ -83,6 +83,7 @@
     zig
   ];
 
+  # backlight control
   programs.light.enable = true;
   programs.zsh = {
       enable = true;
@@ -158,7 +159,7 @@
   };
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
