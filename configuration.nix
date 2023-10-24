@@ -105,6 +105,11 @@
         set -g set-titles on
         setw -g pane-base-index 1
         set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+
+        bind -r k select-pane -U
+        bind -r j select-pane -D
+        bind -r h select-pane -L
+        bind -r l select-pane -R
       '';
       plugins = with pkgs; [
           tmuxPlugins.continuum
