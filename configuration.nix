@@ -24,11 +24,11 @@
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
-#  console = {
-#    font = "Lat2-Terminus16";
-#    keyMap = "la-latin1";
-#    useXkbConfig = true; # use xkbOptions in tty.
-#  };
+  #  console = {
+  #    font = "Lat2-Terminus16";
+  #    keyMap = "la-latin1";
+  #    useXkbConfig = true; # use xkbOptions in tty.
+  #  };
 
 
   # Enable sound.
@@ -86,56 +86,56 @@
   # backlight control
   programs.light.enable = true;
   programs.zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
   };
 
   programs.tmux = {
-      enable = true;
-      baseIndex = 1;
-      escapeTime = 0;
-      historyLimit = 10000;
-      keyMode = "vi";
-      terminal = "tmux-256color";
-      extraConfig = ''
-        set -g display-time 4000
-        set -g status-keys emacs
-        set -g renumber-windows on
-        set -g set-titles on
-        setw -g pane-base-index 1
-        set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
+    enable = true;
+    baseIndex = 1;
+    escapeTime = 0;
+    historyLimit = 10000;
+    keyMode = "vi";
+    terminal = "tmux-256color";
+    extraConfig = ''
+      set -g display-time 4000
+      set -g status-keys emacs
+      set -g renumber-windows on
+      set -g set-titles on
+      setw -g pane-base-index 1
+      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
 
-        bind -r k select-pane -U
-        bind -r j select-pane -D
-        bind -r h select-pane -L
-        bind -r l select-pane -R
-      '';
-      extraConfigBeforePlugins = ''
-        set -g @dracula-plugins "cpu-usage ram-usage"
+      bind -r k select-pane -U
+      bind -r j select-pane -D
+      bind -r h select-pane -L
+      bind -r l select-pane -R
+    '';
+    extraConfigBeforePlugins = ''
+      set -g @dracula-plugins "cpu-usage ram-usage"
 
-        set -g @dracula-cpu-usage-colors "pink dark_gray"
-        set -g @dracula-ram-usage-colors "orange dark_gray"
-        set -g @dracula-border-contrast true
+      set -g @dracula-cpu-usage-colors "pink dark_gray"
+      set -g @dracula-ram-usage-colors "orange dark_gray"
+      set -g @dracula-border-contrast true
 
-        set -g @dracula-show-powerline true
-        set -g @dracula-left-icon-padding 0
+      set -g @dracula-show-powerline true
+      set -g @dracula-left-icon-padding 0
 
-        set -g @dracula-show-left-icon session
-        set -g @dracula-cpu-display-load true
-      '';
-      plugins = with pkgs; [
-          tmuxPlugins.continuum
-          tmuxPlugins.resurrect
-          tmuxPlugins.dracula
-          tmuxPlugins.sessionist
-      ];
+      set -g @dracula-show-left-icon session
+      set -g @dracula-cpu-display-load true
+    '';
+    plugins = with pkgs; [
+      tmuxPlugins.continuum
+      tmuxPlugins.resurrect
+      tmuxPlugins.dracula
+      tmuxPlugins.sessionist
+    ];
   };
 
   fonts.fonts = with pkgs; [
-      dejavu_fonts
-      font-awesome
-      (nerdfonts.override { fonts = [ "FiraCode" "DejaVuSansMono" ]; })
+    dejavu_fonts
+    font-awesome
+    (nerdfonts.override { fonts = [ "FiraCode" "DejaVuSansMono" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -156,7 +156,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  
+
   # Configure keymap in X11
   services.xserver.layout = "latam";
   services.xserver.xkbOptions = "caps:escape";
@@ -164,16 +164,16 @@
   # i3
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.i3.extraPackages = with pkgs; [
-	dmenu
-	i3lock
-	i3blocks
+    dmenu
+    i3lock
+    i3blocks
   ];
   services.picom.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
-      enable = true;
-      touchpad.tapping = false;
+    enable = true;
+    touchpad.tapping = false;
   };
 
   # Enable the OpenSSH daemon.
@@ -197,6 +197,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
 
