@@ -111,6 +111,19 @@
         bind -r h select-pane -L
         bind -r l select-pane -R
       '';
+      extraConfigBeforePlugins = ''
+        set -g @dracula-plugins "cpu-usage ram-usage"
+
+        set -g @dracula-cpu-usage-colors "pink dark_gray"
+        set -g @dracula-ram-usage-colors "orange dark_gray"
+        set -g @dracula-border-contrast true
+
+        set -g @dracula-show-powerline true
+        set -g @dracula-left-icon-padding 0
+
+        set -g @dracula-show-left-icon session
+        set -g @dracula-cpu-display-load true
+      '';
       plugins = with pkgs; [
           tmuxPlugins.continuum
           tmuxPlugins.resurrect
