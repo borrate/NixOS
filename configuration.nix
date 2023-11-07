@@ -98,7 +98,7 @@
     settings = {
       right_format = "$time $sudo";
       format = ''
-      $directory$git_branch$git_status
+      $hostname$directory$git_branch$git_status
       $character
       '';
       directory = {
