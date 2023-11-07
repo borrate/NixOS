@@ -200,13 +200,20 @@
     i3lock
     i3blocks
   ];
-  services.picom.enable = true;
+
+  # Autologin
+  services.xserver.displayManager = {
+    autoLogin.enable = true;
+    autoLogin.user = "rh";
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
     enable = true;
     touchpad.tapping = false;
   };
+
+  services.picom.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
