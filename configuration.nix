@@ -49,6 +49,8 @@
   users.defaultUserShell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
+  # Agrega ~/.local/bin/ al $PATH
+  environment.localBinInPath = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
