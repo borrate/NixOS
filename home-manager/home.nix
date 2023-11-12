@@ -50,6 +50,8 @@
     ".config/zsh/aliases".source = dotfiles/aliases;
     ".config/zsh/completion.zsh".source = dotfiles/completion.zsh;
     ".zshenv".source = dotfiles/zshenv;
+
+    ".config/i3/config".source = dotfiles/i3config;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
