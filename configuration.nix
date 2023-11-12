@@ -66,7 +66,6 @@
     fzf
     git
     gnucash
-    kitty
     lazygit
     lm_sensors
     maim
@@ -81,6 +80,7 @@
     traceroute
     ungoogled-chromium
     unzip
+    wezterm
     wget
     xclip
     zig
