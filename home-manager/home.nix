@@ -52,6 +52,7 @@
     ".zshenv".source = dotfiles/zshenv;
 
     ".config/i3/config".source = dotfiles/i3config;
+    ".config/dunst/dunstrc".source = dotfiles/dunstrc;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
