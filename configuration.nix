@@ -125,47 +125,6 @@
     };
   };
 
-  programs.tmux = {
-    enable = true;
-    baseIndex = 1;
-    escapeTime = 0;
-    historyLimit = 10000;
-    keyMode = "vi";
-    terminal = "tmux-256color";
-    extraConfig = ''
-      set -g display-time 4000
-      set -g status-keys emacs
-      set -g renumber-windows on
-      set -g set-titles on
-      setw -g pane-base-index 1
-      set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'
-
-      bind -r k select-pane -U
-      bind -r j select-pane -D
-      bind -r h select-pane -L
-      bind -r l select-pane -R
-    '';
-    extraConfigBeforePlugins = ''
-      set -g @dracula-plugins "cpu-usage ram-usage"
-
-      set -g @dracula-cpu-usage-colors "pink dark_gray"
-      set -g @dracula-ram-usage-colors "orange dark_gray"
-      set -g @dracula-border-contrast true
-
-      set -g @dracula-show-powerline true
-      set -g @dracula-left-icon-padding 0
-
-      set -g @dracula-show-left-icon session
-      set -g @dracula-cpu-display-load true
-    '';
-    plugins = with pkgs; [
-      tmuxPlugins.continuum
-      tmuxPlugins.resurrect
-      tmuxPlugins.dracula
-      tmuxPlugins.sessionist
-    ];
-  };
-
   fonts.fonts = with pkgs; [
     dejavu_fonts
     font-awesome
