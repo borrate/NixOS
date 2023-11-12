@@ -57,6 +57,7 @@
   environment.systemPackages = with pkgs; [
     acpi
     bat
+    cargo
     discord
     dunst
     docker
@@ -66,6 +67,7 @@
     git
     gnucash
     kitty
+    lazygit
     lm_sensors
     maim
     neofetch
