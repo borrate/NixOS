@@ -1,0 +1,8 @@
+# git
+alias gf='git fetch'
+alias gfy='git fetch &&'
+alias gst='git status'
+alias gl='git log'
+alias glol='git log --oneline --graph --decorate'
+alias gco='git checkout'
+alias gplis='git push --force-with-lease'

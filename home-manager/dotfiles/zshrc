@@ -1,0 +1,18 @@
+setopt appendhistory extendedglob nomatch notify
+unsetopt beep autocd
+setopt AUTO_PUSHD           # Push the current directory visited on the stack.
+setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
+setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
+
+bindkey -v # vim mode
+export KEYTIMEOUT=1 # switch between vim modes quicker
+
+source "$ZDOTDIR/completion.zsh" # configuración de completion
+source "$ZDOTDIR/aliases" # configuración de completion
+
+# History search
+bindkey '^R' history-incremental-search-backward
+
+eval "$(starship init zsh)"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
