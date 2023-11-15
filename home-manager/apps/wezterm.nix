@@ -17,7 +17,7 @@
       -- This is where you actually apply your config choices
 
       -- For example, changing the color scheme:
-      config.color_scheme = 'Dracula'
+      config.color_scheme = 'Tokyo Night (Gohg)'
       config.tab_bar_at_bottom = true
       config.window_background_opacity = 0.9
       -- timeout_milliseconds defaults to 1000 and can be omitted
