@@ -26,6 +26,7 @@
   home.packages = [
     pkgs.htop
     pkgs.nil
+    pkgs.rofi
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
