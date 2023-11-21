@@ -2,10 +2,8 @@
   programs.wezterm = {
     enable = true;
     extraConfig = ''
-      -- Pull in the wezterm API
       local wezterm = require 'wezterm'
-
-      -- This table will hold the configuration.
+      local act = wezterm.action
       local config = {}
 
       -- In newer versions of wezterm, use the config_builder which will
@@ -14,9 +12,6 @@
         config = wezterm.config_builder()
       end
 
-      -- This is where you actually apply your config choices
-
-      -- For example, changing the color scheme:
       config.color_scheme = 'Tokyo Night (Gohg)'
       config.tab_bar_at_bottom = true
       config.window_background_opacity = 0.9
@@ -26,53 +21,68 @@
         {
           key = '|',
           mods = 'LEADER|SHIFT',
-          action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+          action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
         },
         {
           key = '%',
           mods = 'LEADER|SHIFT',
-          action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+          action = act.SplitVertical { domain = 'CurrentPaneDomain' },
         },
         {
           key = 'n',
           mods = 'LEADER',
-          action = wezterm.action.ActivateTabRelative(1),
+          action = act.ActivateTabRelative(1),
         },
         {
           key = 'p',
           mods = 'LEADER',
-          action = wezterm.action.ActivateTabRelative(-1),
+          action = act.ActivateTabRelative(-1),
         },
         {
           key = 'c',
           mods = 'LEADER',
-          action = wezterm.action.SpawnTab 'CurrentPaneDomain',
+          action = act.SpawnTab 'CurrentPaneDomain',
         },
         {
           key = 'h',
           mods = 'LEADER',
-          action = wezterm.action.ActivatePaneDirection 'Left',
+          action = act.ActivatePaneDirection 'Left',
         },
         {
           key = 'l',
           mods = 'LEADER',
-          action = wezterm.action.ActivatePaneDirection 'Right',
+          action = act.ActivatePaneDirection 'Right',
         },
         {
           key = 'k',
           mods = 'LEADER',
-          action = wezterm.action.ActivatePaneDirection 'Up',
+          action = act.ActivatePaneDirection 'Up',
         },
         {
           key = 'j',
           mods = 'LEADER',
-          action = wezterm.action.ActivatePaneDirection 'Down',
+          action = act.ActivatePaneDirection 'Down',
         },
         -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
         {
           key = 'a',
           mods = 'LEADER|CTRL',
-          action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
+          action = act.SendKey { key = 'a', mods = 'CTRL' },
+        },
+        {
+          key = ',',
+          mods = 'LEADER',
+          action = act.PromptInputLine {
+            description = 'Enter new name for tab',
+            action = wezterm.action_callback(function(window, pane, line)
+              -- line will be `nil` if they hit escape without entering anything
+              -- An empty string if they just hit enter
+              -- Or the actual line of text they wrote
+              if line then
+                window:active_tab():set_title(line)
+              end
+            end),
+          },
         },
       }
 
@@ -80,7 +90,7 @@
         table.insert(config.keys, {
           key = tostring(i),
           mods = 'LEADER',
-          action = wezterm.action.ActivateTab(i - 1),
+          action = act.ActivateTab(i - 1),
         })
       end
 
