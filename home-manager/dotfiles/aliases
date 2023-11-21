@@ -1,8 +1,27 @@
+alias rebuild='sudo nixos-rebuild switch'
+
+alias tat='cd $(find ~/repos/ ~/repos/dentalsoft -maxdepth 1 -mindepth 1 -type d | fzf) && nvim'
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# Saqué los dotfiles de ll pa más limpio
+alias ll='ls -lF --block-size=MB'
+alias la='ls -A'
+alias l='ls -CF'
+
 # git
 alias gf='git fetch'
 alias gfy='git fetch &&'
 alias gst='git status'
 alias gl='git log'
 alias glol='git log --oneline --graph --decorate'
+alias grb='git rebase'
+alias gcm='git commit'
+alias ga='git add'
 alias gco='git checkout'
 alias gplis='git push --force-with-lease'
+
+alias cat='bat' #cat with wings
+
+# vi: syntax=bash
