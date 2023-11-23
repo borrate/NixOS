@@ -50,6 +50,10 @@
   environment.shells = with pkgs; [ zsh ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-24.8.6"
+  ];
+
   # Agrega ~/.local/bin/ al $PATH
   environment.localBinInPath = true;
 
