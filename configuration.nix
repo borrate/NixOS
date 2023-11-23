@@ -153,6 +153,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
