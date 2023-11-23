@@ -79,6 +79,7 @@
     networkmanagerapplet
     nodejs
     obsidian
+    php
     ripgrep
     tig
     tldr
