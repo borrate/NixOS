@@ -1,6 +1,7 @@
 {
   programs.starship = {
     enable = true;
+    enableZshIntegration = true;
     # "$schema" = "https://starship.rs/config-schema.json";
     settings = {
       right_format = "$time $sudo";

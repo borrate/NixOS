@@ -47,6 +47,7 @@
   };
 
   users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
 
   nixpkgs.config.allowUnfree = true;
   # Agrega ~/.local/bin/ al $PATH
