@@ -27,6 +27,8 @@
     pkgs.htop
     pkgs.nil
     pkgs.rofi
+    pkgs.lua
+    pkgs.z-lua
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

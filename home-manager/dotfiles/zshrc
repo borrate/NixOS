@@ -14,6 +14,7 @@ source "$ZDOTDIR/aliases" # configuración de completion
 bindkey '^R' history-incremental-search-backward
 
 eval "$(starship init zsh)"
+eval "$(z.lua --init zsh)"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
