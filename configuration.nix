@@ -42,7 +42,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rh = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "video" ];
     initialPassword = "rh";
   };
 
@@ -93,11 +93,7 @@
 
   # backlight control
   programs.light.enable = true;
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
+  programs.zsh.enable = true;
 
   fonts.fonts = with pkgs; [
     dejavu_fonts
