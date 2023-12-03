@@ -107,6 +107,7 @@ plugins = {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
+    "github/copilot.vim"
 }
 
 -- Carga los plugins
@@ -395,3 +396,4 @@ require("lspconfig").nil_ls.setup{
   capabilities = capabilities
 }
 
+vim.api.nvim_set_keymap('i', '<C-c>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
