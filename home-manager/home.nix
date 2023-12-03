@@ -91,6 +91,7 @@
     enable = true;
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
+    dotDir = "./"; # Apunto a donde tengo el .zshenv
   };
 
   # Let Home Manager install and manage itself.
