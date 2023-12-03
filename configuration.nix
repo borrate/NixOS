@@ -64,27 +64,16 @@
     bat
     cargo
     discord
-    dunst
-    docker
-    feh
-    firefox
     fzf
     git
-    gnucash
-    lazygit
     lm_sensors
-    maim
-    neofetch
     neovim
-    networkmanagerapplet
     nodejs
     obsidian
-    php
     ripgrep
     tig
     tldr
     traceroute
-    ungoogled-chromium
     unzip
     wget
     xclip
@@ -95,7 +84,7 @@
   programs.light.enable = true;
   programs.zsh.enable = true;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     dejavu_fonts
     font-awesome
     (nerdfonts.override { fonts = [ "FiraCode" "DejaVuSansMono" ]; })
