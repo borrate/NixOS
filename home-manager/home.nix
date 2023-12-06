@@ -4,7 +4,9 @@
   imports = [
     ./apps/starship.nix
     ./apps/wezterm.nix
+    ./apps/zsh.nix
   ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "rh";
@@ -57,11 +59,6 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/zsh/.zshrc".source = dotfiles/zshrc;
-    ".config/zsh/aliases".source = dotfiles/aliases;
-    ".config/zsh/completion.zsh".source = dotfiles/completion.zsh;
-    ".zshenv".source = dotfiles/zshenv;
-
     ".config/i3/config".source = dotfiles/i3config;
     ".config/dunst/dunstrc".source = dotfiles/dunstrc;
     ".config/nvim/init.lua".source = dotfiles/nvim.lua;
@@ -84,14 +81,11 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    XDG_CONFIG_HOME="/home/rh/.config";
   };
 
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
-    dotDir = "./"; # Apunto a donde tengo el .zshenv
   };
 
   # Let Home Manager install and manage itself.
