@@ -40,6 +40,7 @@
     pkgs.nil
     pkgs.ungoogled-chromium
     pkgs.rofi
+    pkgs.tmux # no eliminar, lo uso para ssh
     pkgs.z-lua
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
