@@ -85,6 +85,7 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     XDG_CONFIG_HOME="/home/rh/.config";
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=60";
   };
 
   };

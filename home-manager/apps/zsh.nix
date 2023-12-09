@@ -7,8 +7,21 @@
     history = {
       size = 100000;
       save = 100000;
+      extended = true;
+      ignoreAllDups = true;
     };
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
     enableCompletion = true;
+     profileExtra = ''
+      setopt appendhistory
+      setopt extendedglob
+      setopt nomatch
+      setopt notify
+      setopt AUTO_PUSHD           # Push the current directory visited on the stack.
+      setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
+      setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
+    '';
     completionInit = ''
       zmodload zsh/complist
 
@@ -75,8 +88,6 @@
       autoload -U compinit
       compinit
     '';
-    enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
     shellAliases = {
       rebuild="sudo nixos-rebuild switch";
 
