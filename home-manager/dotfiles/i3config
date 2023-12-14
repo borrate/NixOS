@@ -60,6 +60,9 @@ bindsym $mod+Return exec wezterm
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Selección de área y guarda pantallazo en clipboard
+bindsym $mod+p exec maim -s | xclip -selection clipboard -t image/png
+
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
