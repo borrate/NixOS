@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./apps/dunst.nix
     ./apps/starship.nix
     ./apps/wezterm.nix
     ./apps/zsh.nix
@@ -26,7 +27,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.dunst
     pkgs.docker
     pkgs.feh
     pkgs.firefox
@@ -61,7 +61,6 @@
   # plain files is through 'home.file'.
   home.file = {
     ".config/i3/config".source = dotfiles/i3config;
-    ".config/dunst/dunstrc".source = dotfiles/dunstrc;
     ".config/nvim/init.lua".source = dotfiles/nvim.lua;
 
     # # You can also set the file content immediately.
