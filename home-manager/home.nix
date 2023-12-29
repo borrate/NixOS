@@ -37,11 +37,11 @@
     pkgs.htop
     pkgs.lua
     pkgs.networkmanagerapplet
-    pkgs.nil
+    pkgs.nil # nix lsp server
     pkgs.ungoogled-chromium
     pkgs.rofi
-    pkgs.tmux # no eliminar, lo uso para ssh
-    pkgs.z-lua
+    pkgs.tmux # lo uso para ssh
+    pkgs.z-lua # z command
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -87,7 +87,6 @@
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=60";
   };
 
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
