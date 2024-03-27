@@ -24,6 +24,8 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfree = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -87,6 +89,11 @@
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=60";
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
