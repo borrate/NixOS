@@ -19,14 +19,14 @@
       config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
       config.keys = {
         {
-          key = '|',
+          key = '"',
           mods = 'LEADER|SHIFT',
-          action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
+          action = act.SplitVertical { domain = 'CurrentPaneDomain' },
         },
         {
           key = '%',
           mods = 'LEADER|SHIFT',
-          action = act.SplitVertical { domain = 'CurrentPaneDomain' },
+          action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
         },
         {
           key = 'n',
