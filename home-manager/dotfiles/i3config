@@ -199,7 +199,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Fondo de pantalla
-exec "sh ./.fehbg"
+exec "sh .fehbg"
 
 default_border pixel 3
 default_floating_border pixel 3
